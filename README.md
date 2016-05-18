@@ -8,3 +8,9 @@ PHPCS導入のサンプルテンプレート
 ```sh
 $ testing/phpcs -i
 ```
+
+## 規約エラーを確認
+
+```sh
+$ testing/phpcs -s --report=source .
+```
