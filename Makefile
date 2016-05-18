@@ -14,7 +14,7 @@ $(PHPCBF):
 	chmod 755 $(PHPCBF)
 
 phpcs: $(PHPCS)
-	$(PHPCS) src
+	$(PHPCS) --extensions=php --ignore=*Test.php src
 
 phpcbf: $(PHPCBF)
 	$(PHPCBF) src
