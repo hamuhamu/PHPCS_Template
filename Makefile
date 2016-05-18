@@ -14,7 +14,7 @@ $(PHPCBF):
 	chmod 755 $(PHPCBF)
 
 phpcs: $(PHPCS)
-	$(PHPCS) --extensions=php --ignore=*Test.php src
+	$(PHPCS) --extensions=php --ignore=*Test.php --colors --encoding=utf8 --standard=PSR2 -sw src
 
 phpcbf: $(PHPCBF)
 	$(PHPCBF) src
