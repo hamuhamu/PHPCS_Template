@@ -1,17 +1,9 @@
 .PHONY: install
-PHPCS=testing/phpcs
-PHPCBF=testing/phpcbf
+PHPCS=vendor/squizlabs/php_codesniffer/scripts/phpcs
+PHPCBF=vendor/squizlabs/php_codesniffer/scripts/phpcbf
 
 help:
 	cat Makefile
-
-$(PHPCS):
-	curl -o $(PHPCS) -sSL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
-	chmod 755 $(PHPCS)
-
-$(PHPCBF):
-	curl -o $(PHPCBF) -sSL https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar
-	chmod 755 $(PHPCBF)
 
 phpcs: $(PHPCS)
 	$(PHPCS) --extensions=php --ignore=*Test.php --colors --encoding=utf8 --standard=PSR2 -sw src
