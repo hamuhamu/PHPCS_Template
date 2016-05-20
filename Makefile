@@ -1,6 +1,6 @@
 .PHONY: install
-PHPCS=vendor/squizlabs/php_codesniffer/scripts/phpcs
-PHPCBF=vendor/squizlabs/php_codesniffer/scripts/phpcbf
+PHPCS=vendor/bin/phpcs
+PHPCBF=vendor/bin/phpcbf
 
 help:
 	cat Makefile
