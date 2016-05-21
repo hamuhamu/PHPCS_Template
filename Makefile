@@ -6,7 +6,8 @@ help:
 	cat Makefile
 
 phpcs: $(PHPCS)
-	$(PHPCS) --extensions=php --ignore=*Test.php --colors --encoding=utf8 --standard=PSR2 -sw src
+	# -s 規約エラー時にエラーのルール名を表示
+	$(PHPCS) --colors --encoding=utf8 --standard=phpcs_ruleset.xml -s
 
 phpcbf: $(PHPCBF)
-	$(PHPCBF) src
+	$(PHPCBF) --standard=phpcs_ruleset.xml

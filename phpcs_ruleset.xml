@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- 公式doc https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
+<ruleset name="phpcs_ruleset">
+    <rule ref="PSR2" />
+    <file>./src</file>
+    <exclude-pattern>*Test.php</exclude-pattern>
+    <rule ref="Generic.Commenting.Todo.CommentFound" />        <!-- todoコメントがあれば警告を出す -->
+    <rule ref="Squiz.PHP.CommentedOutCode" />                  <!-- コードをコメントアウトしたようなものは警告を出す -->
+    <rule ref="Squiz.ControlStructures.ControlSignature" />    <!-- }の後にスペースでなければエラーを出す -->
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter">  <!-- 使用していないfunctionの変数があればエラーを出す -->
+        <type>error</type>
+    </rule>
+
+    <rule ref="Generic.PHP.ForbiddenFunctions"> <!-- 許可しない関数を使用していればエラーを出す -->
+        <properties>
+            <property name="forbiddenFunctions" type="array"
+                value="print,echo,var_dump,phpinfo,(intager)=>(int)" />
+        </properties>
+    </rule>
+
+    <rule ref="Generic.WhiteSpace.ScopeIndent"> <!-- インデントサイズ -->
+        <properties>
+            <property name="indent" value="4"/>
+        </properties>
+  </rule>
+</ruleset>
