@@ -14,7 +14,7 @@
     <rule ref="Generic.PHP.ForbiddenFunctions"> <!-- 許可しない関数を使用していればエラーを出す -->
         <properties>
             <property name="forbiddenFunctions" type="array"
-                value="print,echo,var_dump,phpinfo,(intager)=>(int)" />
+                value="print,echo,phpinfo,var_dump" />
         </properties>
     </rule>
 
