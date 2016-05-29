@@ -16,4 +16,4 @@ phpcs: $(PHPCS)
 phpcbf: $(PHPCBF)
 	git diff --name-only --diff-filter=ACMR HEAD | \
 	grep ".php" | \
-	$(PHPCBF) --standard=phpcs_ruleset.xml
+	xargs $(PHPCBF) --standard=phpcs_ruleset.xml
